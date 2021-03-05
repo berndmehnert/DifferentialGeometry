@@ -4,9 +4,9 @@ export ∇, G, Jac, ∂, gauss, I, II, Curv
 """ 
 Basic differential operators:
 """
-∇(f, v) = ForwardDiff.gradient(f, v)
-Jac(f, v) = ForwardDiff.jacobian(f, v)
-∂(f, v, i) = ∇(f, v)[i]
+∇(f, x) = ForwardDiff.gradient(f, x)
+Jac(f, x) = ForwardDiff.jacobian(f, x)
+∂(f, x, i) = ∇(f, x)[i]
 
 """
 Let f: U -> C ⊂ S ⊂ IR^n be the parametrisation of an open hypersurface chunk C and x in U.
