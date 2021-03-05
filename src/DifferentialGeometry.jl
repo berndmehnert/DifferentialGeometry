@@ -6,7 +6,7 @@ Basic differential operators:
 """
 ∇(f, v) = ForwardDiff.gradient(f, v)
 Jac(f, v) = ForwardDiff.jacobian(f, v)
-∂(f,i) = ∇(f,v)[i]
+∂(f, v, i) = ∇(f, v)[i]
 
 """
 Let f: U -> C ⊂ S ⊂ IR^n be the parametrisation of an open hypersurface chunk C and x in U.
