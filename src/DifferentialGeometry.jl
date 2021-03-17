@@ -10,7 +10,7 @@ Jac(f, x) = ForwardDiff.jacobian(f, x)
 ∂(f, x, i) = ∇(f, x)[i]
 
 """
-Let f: U -> C ⊂ S ⊂ IR^n be the parametrisation of an open hypersurface chunk C and x in U.
+Let f: U -> IR^(n+1) where U⊂IR^n is open be the parametrisation of a hypersurface chunk and x in U.
 """
 G(f,x) = begin 
     A = Jac(f,x)
