@@ -1,6 +1,7 @@
 module DifferentialGeometry
 using ForwardDiff
-export ∇, G, Jac, ∂, gauss, I, II, Curv 
+using LinearAlgebra
+export ∇, G, Jac, ∂, gauss, I, II, Curv, ν
 """ 
 Basic differential operators:
 """
@@ -34,5 +35,12 @@ Fundamental forms I and II and Gaussian curvature:
 I(f,x,X,Y) = X⋅(G(f,x)*Y)
 II(f,x,X,Y) = X⋅(H(f,x)*Y)
 Curv(f,x) = det(L(f,x))
+
+# Help functions
+_e(n, i) = begin
+    A = zeros(n)
+    A[i] = 1
+    return A
+end
 
 end # module
