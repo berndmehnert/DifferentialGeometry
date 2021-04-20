@@ -12,3 +12,10 @@ g(x)= begin
     return [A[1,1] A[1,2] A[2,2]]
 end
 h(x)=[1.0 0.0 2.0]⋅g(x)
+
+for i in -π:0.1:π
+    for j in 0.01:0.01:0.2
+    push!(A,[i,j])
+    end
+end
+B = map(x -> Curv(g,x), A)
