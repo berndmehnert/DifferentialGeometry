@@ -19,3 +19,10 @@ for i in -π:0.1:π
     end
 end
 B = map(x -> Curv(g,x), A)
+for i in -π:0.1:π
+    for j in 0.01:0.01:0.2
+    push!(C,[i,j,Curv(g, [i,j])])
+    end
+end
+s(x,y) = Curv(g, [x,y])
+plot(-π:0.1:π, 0.01:0.01:0.2, s,st=:surface)
