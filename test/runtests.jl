@@ -20,7 +20,7 @@ for i in -π:0.1:π
 end
 B = map(x -> Curv(g,x), A)
 for i in -π:0.1:π
-    for j in 0.01:0.01:0.2
+    for j in 0.01:0.01:0.9
     push!(C,[i,j,Curv(g, [i,j])])
     end
 end
