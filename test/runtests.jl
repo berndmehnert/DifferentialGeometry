@@ -2,9 +2,14 @@ using Test
 using DifferentialGeometry
 using LinearAlgebra
 
-f(t)  = [cos(t[1]) sin(t[1])]
-@test norm(ν(f,[0]) + [1; 0]) < 10^(-15)
+@testset "general tests" begin
+    f(t)  = [cos(t[1]); sin(t[1])]  
+    @test norm(ν(f,[0]) + [1; 0]) ≈ 0 atol = 1e-10
+    @test det([Jac(f,[0]) ν(f,[0])]) > 0
+    @test Curv(f,[0]) == 1.0
+end
 
+"""
 k(a) = [cos(a) -sin(a); sin(a) cos(a)]
 _g(a,t) = k(a)*[t 0;0 1/t]*k(-a)
 g(x)= begin
@@ -26,3 +31,4 @@ for i in -π:0.1:π
 end
 s(x,y) = Curv(g, [x,y])
 plot(-π:0.1:π, 0.01:0.01:0.2, s,st=:surface)
+"""
