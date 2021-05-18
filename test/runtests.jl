@@ -17,6 +17,7 @@ g(x)= begin
     return [A[1,1] A[1,2] A[2,2]]
 end
 h(x)=[1.0 0.0 2.0]⋅g(x)
+p(x) = exp(1im * h(x))*<X,N>*ω(x) !!! TODO
 
 for i in -π:0.1:π
     for j in 0.01:0.01:0.2

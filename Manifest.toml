@@ -78,6 +78,18 @@ git-tree-sha1 = "9f02045d934dc030edad45944ea80dbd1f0ebea7"
 uuid = "d38c429a-6771-53c6-b99e-75d170b6e991"
 version = "0.5.7"
 
+[[Cuba]]
+deps = ["Cuba_jll", "LinearAlgebra"]
+git-tree-sha1 = "8fb163273547563ee7a0906b880b721646bf0f86"
+uuid = "8a292aeb-7a57-582c-b821-06e4c11590b1"
+version = "2.2.0"
+
+[[Cuba_jll]]
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
+git-tree-sha1 = "50beb435c4a92a6a60c4fc62710520f47ce5770c"
+uuid = "3bed1096-5ab2-53a1-92e2-6c1cc31d0f4b"
+version = "4.2.1+0"
+
 [[DataAPI]]
 git-tree-sha1 = "dfb3b7e89e395be1e25c2ad6d7690dc29cc53b1d"
 uuid = "9a962f9c-6df0-11e9-0e5d-c546b8b5ee8a"
