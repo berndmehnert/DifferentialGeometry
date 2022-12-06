@@ -9,6 +9,16 @@ using LinearAlgebra
     @test Curv(f,[0]) == 1.0
 end
 
+@testset "fancier example" begin
+    f(x, γ) = [x[1], x[2], (γ+x[2]^2)/x[1]]
+    N(x, γ) = [(γ+x[2]^2)/(x[1]^2), -2*x[2]/x[1], 1]
+    H(x, γ) = [2*(γ+x[2]^2)/(x[1]^3) -2*x[2]/x[1]; -2*x[2]/x[1] 2/x[1]]/norm(N(x,γ))
+    K(x, γ) = 4*γ/((x[1]^4)*norm(N(x,γ))^4)
+    @test K([1.0, 2.0], 2.0) ≈ Curv(x -> f(x, 2.0), [1.0, 2.0]) atol = 1e-10
+    @test K([1.1, 7.2], 1.2) ≈ Curv(x -> f(x, 1.2), [1.1, 7.2]) atol = 1e-10
+    @test K([5.7, 2.2], 0.4) ≈ Curv(x -> f(x, 0.4), [5.7, 2.2]) atol = 1e-10
+end
+
 """
 k(a) = [cos(a) -sin(a); sin(a) cos(a)]
 _g(a,t) = k(a)*[t 0;0 1/t]*k(-a)
